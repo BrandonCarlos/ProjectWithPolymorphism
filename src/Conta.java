@@ -1,5 +1,5 @@
-public class Conta {
-	private double saldo;
+public abstract class Conta {//Ninguém mais pode instânciar object Conta
+	protected double saldo;//Só as classes filhas tem acesso ao atributo "saldo"
 	private int agencia;
 	private int numero;
 	private Cliente titular;
@@ -16,9 +16,7 @@ public class Conta {
 //		System.out.println("Estou criando uma conta " + this.numero);
 	}
 
-	public void deposita(double valor) {
-		this.saldo += valor;
-	}
+	public abstract void deposita(double valor);//método abstract
 
 	public boolean saca(double valor) {
 		if (this.saldo >= valor) {
